@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generador de Paletas</title>
+    <link rel="stylesheet" href="CSS/style.css" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <h1>ColorFly Studio</h1>
+    </header>
+
+    <main class="page-content">
+      <section class="controls" aria-label="Configuración del generador">
+        <div class="field">
+          <label for="Cantidad">Cantidad de colores</label>
+          <select id="Cantidad" name="size">
+            <option value="6">6 colores</option>
+            <option value="8">8 colores</option>
+            <option value="9">9 colores</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="formato">Formato de salida</label>
+          <select id="formato" name="formato">
+            <option value="hex">HEX</option>
+            <option value="rgba">RGBA</option>
+            <option value="hsl">HSLA</option>
+          </select>
+        </div>
+
+        <button id="generarPaleta" type="button">Generar Paleta</button>
+      </section>
+
+      <section id="paleta" aria-label="Paleta de colores" aria-live="polite"></section>
+    </main>
+
+    <div id="toast" aria-live="polite" aria-atomic="true"></div>
+
+    <footer class="site-footer">
+      <p>Proyecto final L-1</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
