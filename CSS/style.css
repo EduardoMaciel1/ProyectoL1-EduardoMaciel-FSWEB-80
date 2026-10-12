@@ -158,14 +158,14 @@ select:focus,
 .site-footer {
     text-align: center;
     padding: 20px 15px 28px;
-    color: #cfe0e5;
+    color: #0d1518;
     font-size: 1.25rem;
     transform: translateY(2px);
     border: 1px solid rgba(148, 163, 184, 0.25);
     border-radius: 18px;
     box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
     backdrop-filter: blur(6px);
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(174, 166, 166, 0.8);
 }
 
 @media (max-width: 600px) {
