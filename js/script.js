@@ -129,6 +129,7 @@ function renderPaleta() {
     codigoColor.textContent = obtenerCodigoParaMostrar(item.valor, estado.formato);
 
     const botonBloqueo = document.createElement("button");
+    botonBloqueo.classList.add("lock-btn");
     botonBloqueo.textContent = item.locked ? "🔒" : "🔓";
 
     botonBloqueo.addEventListener("click", () => {
@@ -181,5 +182,4 @@ selectFormato.addEventListener("change", () => {
   estado.formato = selectFormato.value;
   renderPaleta();
 });
-
 

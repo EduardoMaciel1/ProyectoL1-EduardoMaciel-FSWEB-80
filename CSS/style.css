@@ -102,7 +102,7 @@ select:focus,
 
 #paleta {
   display: grid;
-  gap: 16px;
+  gap: 28px;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   margin-bottom: 40px;
 }
@@ -117,14 +117,21 @@ select:focus,
   justify-content: flex-end;
   align-items: center;
   padding: 10px;
-  border-radius: 18px;
+  border-radius: 13px;
+  gap: 7px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarjeta:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 22px rgba(15, 23, 42, 0.16);
 }
 
 .color-card {
     position: relative;
     overflow: hidden;
     min-height: 170px;
-    border-radius: 18px;
+    border-radius: 13px;
     box-shadow: 0 12px 22px rgba(15, 23, 42, 0.08);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     border: 1px solid rgba(148, 163, 184, 0.2);
@@ -137,6 +144,11 @@ select:focus,
 
 .lock-btn:hover {
     background: rgba(255, 255, 255, 0.95);
+}
+
+.tarjeta .lock-btn {
+    width: 110%;
+    min-width: 0;
 }
 
 .color-code {
@@ -162,7 +174,7 @@ select:focus,
     font-size: 1.25rem;
     transform: translateY(2px);
     border: 1px solid rgba(148, 163, 184, 0.25);
-    border-radius: 18px;
+    border-radius: 22px;
     box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
     backdrop-filter: blur(6px);
     background: rgba(174, 166, 166, 0.8);
@@ -181,13 +193,13 @@ select:focus,
 }
 .tarjeta p {
   background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
-  border-radius: 10px;
-  padding: 8px 10px;
-  font-size: 0.75rem;
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 6px 15px rgba(15, 23, 42, 0.08);
+  border-radius: 15px;
+  padding: 7px 9px;
+  font-size: 0.90rem;
   font-weight: 700;
   color: #111827;
   text-align: center;
