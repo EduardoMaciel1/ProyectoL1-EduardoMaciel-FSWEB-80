@@ -2,15 +2,27 @@ const boton = document.getElementById("generarPaleta");
 const contenedor = document.getElementById("paleta");
 const selectFormato = document.getElementById("formato");
 const selectCantidad = document.getElementById("Cantidad");
+const toast = document.getElementById("toast");
+let temporizadorToast;
 
 const estado = {
   cantidad: 6,
-  formato: "hex",
+  formato: "HSL",
   colores: []
 };
 
 function actualizarCantidadDesdeSelect() {
   estado.cantidad = Number(selectCantidad.value);
+}
+
+function mostrarToast(mensaje) {
+  toast.textContent = mensaje;
+  toast.classList.add("visible");
+
+  clearTimeout(temporizadorToast);
+  temporizadorToast = setTimeout(() => {
+    toast.classList.remove("visible");
+  }, 2000);
 }
 
 function generarColorHSL() {
@@ -101,8 +113,8 @@ function convertirRgbARgba(r, g, b, alpha = 1) {
 function obtenerCodigoParaMostrar(valorHsl, formato) {
   const rgb = convertirHslARgb(valorHsl);
 
-  if (formato === "hex") {
-    return convertirRgbAHex(rgb.r, rgb.g, rgb.b);
+  if (formato === "HSL") {
+    return valorHsl;
   }
 
   if (formato === "rgba") {
@@ -115,6 +127,9 @@ function obtenerCodigoParaMostrar(valorHsl, formato) {
 function toggleLock(index) {
   estado.colores[index].locked = !estado.colores[index].locked;
   renderPaleta();
+  mostrarToast(
+    estado.colores[index].locked ? "Color bloqueado" : "Color desbloqueado"
+  );
 }
 
 function renderPaleta() {
@@ -130,7 +145,7 @@ function renderPaleta() {
 
     const botonBloqueo = document.createElement("button");
     botonBloqueo.classList.add("lock-btn");
-    botonBloqueo.textContent = item.locked ? "🔒" : "🔓";
+    botonBloqueo.textContent = item.locked ? "🔒 Bloquear" : "🔓 Desbloquear";
 
     botonBloqueo.addEventListener("click", () => {
       toggleLock(index);
@@ -155,6 +170,14 @@ function generarPaleta() {
   });
 
   renderPaleta();
+  mostrarToast("Paleta generada");
+
+  console.log(
+    "Paleta generada:",
+    estado.colores.map((item) =>
+      obtenerCodigoParaMostrar(item.valor, estado.formato)
+    )
+  );
 }
 
 function crearPaletaInicial() {
@@ -182,4 +205,3 @@ selectFormato.addEventListener("change", () => {
   estado.formato = selectFormato.value;
   renderPaleta();
 });
-
