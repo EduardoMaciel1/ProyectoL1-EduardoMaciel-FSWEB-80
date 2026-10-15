@@ -10,7 +10,7 @@ El propósito principal de la aplicación es consolidar conocimientos prácticos
 ## ⚡ Funcionalidades
 * **Generación Dinámica:** Creación de combinaciones cromáticas aleatorias instantáneas mediante un botón principal.
 * **Control de Muestras:** Selectores integrados para renderizar paletas de 6, 8 o 9 colores en pantalla.
-* **Formatos Flexibles:** Conversión y visualización dinámica de códigos en formatos HEX y RGBA.
+* **Formatos Flexibles:** Conversión y visualización dinámica de códigos en formatos HSL y RGBA.
 * **Accesibilidad Integrada:** Estructura optimizada mediante etiquetas semánticas, estados `:focus-visible` claros para navegación por teclado y validación de contraste UI.
 * **Diseño Responsivo:** Interfaz optimizada y pensada para resoluciones de escritorio (Desktop).
 
