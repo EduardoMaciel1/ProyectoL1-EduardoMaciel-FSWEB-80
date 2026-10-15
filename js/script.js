@@ -145,7 +145,7 @@ function renderPaleta() {
 
     const botonBloqueo = document.createElement("button");
     botonBloqueo.classList.add("lock-btn");
-    botonBloqueo.textContent = item.locked ? "🔒 Bloquear" : "🔓 Desbloquear";
+    botonBloqueo.textContent = item.locked ? "🔓 Desbloquear":"🔒 Bloquear";
 
     botonBloqueo.addEventListener("click", () => {
       toggleLock(index);
